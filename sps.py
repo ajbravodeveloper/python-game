@@ -1,9 +1,8 @@
 import random
 import tkinter
 import pyttsx3
-pyttsx3.speak("Welcome to game")
+pyttsx3.speak("Welcome to rock scissor paper game")
 stats = []
-
 
 def get_winner(call):
     if random.random() <= (1 / 3):
@@ -16,13 +15,13 @@ def get_winner(call):
     if (throw == "rock" and call == "paper") or (throw == "paper" and call == "scissors") \
             or (throw == "scissors" and call == "rock"):
         stats.append('W')
-        result = "You won!"
+        result = "Congrats!! You won the game"
     elif throw == call:
         stats.append('D')
-        result = "It's a draw"
+        result = "Ohh!! It's a draw"
     else:
         stats.append('L')
-        result = "You lost!"
+        result = "Bad luck you lost the game"
 
     global output
     output.config(text="Computer did: " + throw + "\n" + result)
